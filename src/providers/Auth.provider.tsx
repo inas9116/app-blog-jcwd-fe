@@ -1,11 +1,12 @@
-"use client"
+"use client";
+import LoadingScreen from "@/components/LoadingScreen";
 import { useAppDispatch } from "@/redux/hooks";
 import { loginAction } from "@/redux/slices/userSlice";
 import { PropsWithChildren, useEffect, useState } from "react";
-import LoadingScreen from "@/components/LoadingScreen";
 
 const AuthProvider = ({ children }: PropsWithChildren) => {
   const dispatch = useAppDispatch();
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -16,7 +17,7 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
     }
 
     setTimeout(() => {
-      setTimeLoading(false);
+      setIsLoading(false);
     }, 1000);
   }, []);
 
@@ -28,6 +29,3 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
 };
 
 export default AuthProvider;
-function setTimeLoading(arg: boolean) {
-  throw new Error("Function not implemented.");
-}
