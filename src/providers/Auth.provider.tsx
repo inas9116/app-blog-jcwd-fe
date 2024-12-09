@@ -1,3 +1,4 @@
+"use client"
 import { useAppDispatch } from "@/redux/hooks";
 import { loginAction } from "@/redux/slices/userSlice";
 import { PropsWithChildren, useEffect, useState } from "react";
@@ -27,6 +28,6 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
 };
 
 export default AuthProvider;
-function setTimeLoading(arg0: boolean) {
+function setTimeLoading(arg: boolean) {
   throw new Error("Function not implemented.");
 }
